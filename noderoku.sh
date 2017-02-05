@@ -3,6 +3,16 @@
 APP_NAME="$1"
 DIR_NAME="$2"
 
+if [[ -z $1 ]] ; then
+    echo 'Invalid app name: $APP_NAME.'
+    exit 1
+fi
+
+if [[ -z $2 ]] ; then
+    echo 'Invalid directory name: $DIR_NAME.'
+    exit 1
+fi
+
 # init project
 mkdir -p "$DIR_NAME" && cd "$DIR_NAME"
 
